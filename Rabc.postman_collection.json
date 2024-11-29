@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "e5152921-24ec-49e6-b0bd-acffd5c53499",
+		"name": "Rabc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26999280",
+		"_collection_link": "https://galactic-flare-625364.postman.co/workspace/Auth_app~7d68f990-59a1-47be-8cd9-003a57e380b0/collection/26999280-e5152921-24ec-49e6-b0bd-acffd5c53499?action=share&source=collection_link&creator=26999280"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Alex\",\r\n    \"lastName\": \"Volkov\",\r\n    \"email\": \"alex@gmail.com\",\r\n    \"password\": \"password123\",\r\n    \"role\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/api/user/auth/sign-up"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDRjNGEyZGQwNjFjY2MwNzkxMGJhMCIsImlhdCI6MTczMjU2MDAzNCwiZXhwIjoxNzMyNjQ2NDM0fQ.3qp7I8PF6IoITG2PqjhA8hZcAgZIR0tZApXrBJGQ7Ms",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"alex@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/api/user/auth/sign-in"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"My Second Post\",\r\n    \"content\": \"This is the content of my second post.\",\r\n    \"user\": \"Jeeya\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/api/posts"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/posts"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete many posts",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/api/posts"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "Access-User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{URL}}/api/user/test/access-user"
+					},
+					"response": []
+				},
+				{
+					"name": "All-access",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{URL}}/api/user/test/all-access"
+					},
+					"response": []
+				},
+				{
+					"name": "Access-admin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mbyI6eyJzdWIiOiI2NzQ1ODBjNDU5ODk5N2MwZmYxZDM3Y2EiLCJmaXJzdE5hbWUiOiJBbGV4IiwibGFzdE5hbWUiOiJWb2xrb3YiLCJlbWFpbCI6ImFsZXhAZ21haWwuY29tIiwicm9sZSI6eyJuYW1lIjoiYWRtaW4ifX0sImlhdCI6MTczMjYwODgyNywiZXhwIjoxNzMyNjk1MjI3fQ.B5ImfqdPANBUrjtdTBKeVU9JUKVwfT2vnBiwA-w6CZY",
+								"type": "text"
+							}
+						],
+						"url": "{{URL}}/api/user/test/access-admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Access-Moderator",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mbyI6eyJzdWIiOiI2NzQ1ODBjNDU5ODk5N2MwZmYxZDM3Y2EiLCJmaXJzdE5hbWUiOiJBbGV4IiwibGFzdE5hbWUiOiJWb2xrb3YiLCJlbWFpbCI6ImFsZXhAZ21haWwuY29tIiwicm9sZSI6eyJuYW1lIjoiYWRtaW4ifX0sImlhdCI6MTczMjYwODgyNywiZXhwIjoxNzMyNjk1MjI3fQ.B5ImfqdPANBUrjtdTBKeVU9JUKVwfT2vnBiwA-w6CZY",
+								"type": "text"
+							}
+						],
+						"url": "{{URL}}/api/user/test/access-moderator"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
